@@ -11,6 +11,13 @@
 #include <asm/arch/hardware.h>
 #include <asm/io.h>
 
+#define J784S4			0xbb80
+
+#define JTAG_ID_VARIANT_SHIFT	28
+#define JTAG_ID_VARIANT_MASK	(0xf << 28)
+#define JTAG_ID_PARTNO_SHIFT	12
+#define JTAG_ID_PARTNO_MASK	(0xffff << 12)
+
 struct soc_ti_k3_plat {
 	const char *family;
 	const char *revision;
@@ -45,6 +52,10 @@ static const char *get_family_string(u32 idreg)
 	case JTAG_ID_PARTNO_AM62AX:
 		family = "AM62AX";
 		break;
+	case J784S4:
+		family = "J784S4";
+		break;
+
 	default:
 		family = "Unknown Silicon";
 	};
