@@ -52,7 +52,7 @@ static const char *get_family_string(u32 idreg)
 	case JTAG_ID_PARTNO_AM62AX:
 		family = "AM62AX";
 		break;
-	case J784S4:
+	case  JTAG_ID_PARTNO_J784S:
 		family = "J784S4";
 		break;
 
