@@ -38,4 +38,23 @@
 /* MCU SCRATCHPAD usage */
 #define TI_SRAM_SCRATCH_BOARD_EEPROM_START	CONFIG_SYS_K3_MCU_SCRATCHPAD_BASE
 
+#if defined(CONFIG_SYS_K3_SPL_ATF) && !defined(__ASSEMBLY__)
+
+#define J784S4_DEV_MCU_RTI0                     367
+#define J784S4_DEV_MCU_RTI1                     368
+#define J784S4_DEV_MCU_ARMSS0_CPU0              346
+#define J784S4_DEV_MCU_ARMSS0_CPU1              347
+
+static const u32 put_device_ids[] = {
+	J784S4_DEV_MCU_RTI0,
+	J784S4_DEV_MCU_RTI1,
+};
+
+static const u32 put_core_ids[] = {
+	J784S4_DEV_MCU_ARMSS0_CPU1,
+	J784S4_DEV_MCU_ARMSS0_CPU0,	/* Handle CPU0 after CPU1 */
+};
+
+#endif
+
 #endif /* __ASM_ARCH_J784S4_HARDWARE_H */

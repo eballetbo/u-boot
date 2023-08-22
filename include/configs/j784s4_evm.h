@@ -11,7 +11,7 @@
 
 #include <linux/sizes.h>
 #include <config_distro_bootcmd.h>
-#include <environment/ti/mmc.h>
+#include <env/ti/mmc.h>
 
 /* DDR Configuration */
 #define CFG_SYS_SDRAM_BASE1		0x880000000
