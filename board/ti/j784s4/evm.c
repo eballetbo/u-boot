@@ -72,22 +72,6 @@ int dram_init_banksize(void)
 	return 0;
 }
 
-#if defined(CONFIG_OF_LIBFDT) && defined(CONFIG_OF_BOARD_SETUP)
-int ft_board_setup(void *blob, struct bd_info *bd)
-{
-	int ret;
-
-	ret = fdt_fixup_msmc_ram(blob, "/bus@100000", "sram@70000000");
-	if (ret < 0)
-		ret = fdt_fixup_msmc_ram(blob, "/interconnect@100000",
-					 "sram@70000000");
-	if (ret)
-		printf("%s: fixing up msmc ram failed %d\n", __func__, ret);
-
-	return ret;
-}
-#endif
-
 int board_late_init(void)
 {
 	if (IS_ENABLED(CONFIG_TI_I2C_BOARD_DETECT)) {
