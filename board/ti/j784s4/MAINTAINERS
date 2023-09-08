@@ -18,3 +18,4 @@ F:	arch/arm/dts/k3-j784s4-ddr-evm-lp4-4266.dtsi
 F:	arch/arm/dts/k3-am69-sk.dts
 F:	arch/arm/dts/k3-am69-sk-u-boot.dtsi
 F:	arch/arm/dts/k3-am69-r5-sk.dts
+F:	doc/board/ti/j784s4_evm.rst
